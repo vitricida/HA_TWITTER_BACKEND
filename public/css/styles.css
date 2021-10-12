@@ -1,0 +1,13 @@
+#search {
+  border-radius: 20px;
+  width: 100%;
+  border: none;
+}
+.sugerencias {
+  border-radius: 0.5rem;
+}
+
+.sideBarTrendingInfo {
+  font-size: 0.8rem;
+  color: gray;
+}
