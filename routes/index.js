@@ -1,8 +1,6 @@
-/* const publicRoutes = require("./publicRoutes");
-const adminRoutes = require("./adminRoutes");
+const publicRoutes = require("./publicRoutes");
+const tweetsRoutes = require("./tweetsRoutes");
 
 module.exports = (app) => {
-  app.use(publicRoutes);
-  app.use("/admin", adminRoutes);
+  app.use(publicRoutes, tweetsRoutes);
 };
- */
