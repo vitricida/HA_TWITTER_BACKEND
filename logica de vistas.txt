@@ -1,0 +1,48 @@
+Vistas:
+
+login
+register
+home
+
+3 cols:
+
+
+ Col A: Navegacion Sidebar
+------------------------------------------
+  -inicio
+  - explorar
+  - Notificaciones
+  - Mensajes
+  - Boton de Twitear (abre un modal)
+
+
+ Col B:
+------------------------------------------
+  - hacer twit
+	- Campo de Texto
+	- boton insertar imagen
+	- boton insertar GIF
+	- boton insertar ENCUESTA
+	- boton insertar EMOJI
+	- boton PROGRAMAR
+	
+  - lista de twits
+
+ Col C:
+------------------------------------------
+ - buscador
+ - tendencias
+ - sugerencias
+
+perfil del usuario
+ - ver / cambiar imagen de perfil
+ - ver / cambiar imagen de fondo
+ - ver nombres 
+ - ver lista con ultimos 20 twits
+
+
+Vista del twit:
+Compuesta por 2 partials laterales (los mismos que la home)
+En el medio el Twit con input para hacer comentario y lista de comentarios ordenados del mas nuevo al mas viejo.
+
+
