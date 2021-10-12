@@ -16,7 +16,7 @@ async function showRegister(req, res) {
 }
 
 async function showHome(req, res) {
-  res.send("Esto es el home.");
+  res.render("home");
 }
 async function showMyProfile(req, res) {
   res.send("Esto es My Profile.");
