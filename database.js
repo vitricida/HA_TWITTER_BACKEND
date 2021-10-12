@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost/db-hack-academy");
+mongoose.connect("mongodb://localhost/HA_TWITTER");
 
 module.exports = mongoose;
