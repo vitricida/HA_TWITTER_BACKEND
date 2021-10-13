@@ -40,5 +40,14 @@
 a {
   font-size: 0.8rem;
   text-decoration: none;
-  animation: none;
+}
+
+#twButton {
+  font-size: 1rem;
+  width: 70%;
+  border-radius: 30px;
+}
+.rounded-pill {
+  width: fit-content;
+  padding: 1rem;
 }
