@@ -79,3 +79,10 @@ a {
 #twittear {
   border-top: none;
 }
+
+.index_background {
+  background-image: url("https://pbs.twimg.com/media/E2TXLwWVgAA7y55.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
