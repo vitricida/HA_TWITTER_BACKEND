@@ -11,6 +11,9 @@ async function showHome(req, res) {
 async function showLogin(req, res) {
   res.render("login");
 }
+async function showIndex(req, res) {
+  res.render("root");
+}
 async function showRegister(req, res) {
   res.send("Esto es el Login.");
 }
@@ -39,4 +42,5 @@ module.exports = {
   showHome,
   showMyProfile,
   showProfile,
+  showIndex,
 };

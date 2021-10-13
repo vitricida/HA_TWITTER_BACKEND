@@ -3,6 +3,7 @@ const publicRouter = express.Router();
 const pagesController = require("../controllers/pagesController");
 
 publicRouter.get("/home", pagesController.showHome);
+publicRouter.get("/index", pagesController.showIndex);
 publicRouter.get("/", function (req, res) {
   res.redirect("home");
 });
