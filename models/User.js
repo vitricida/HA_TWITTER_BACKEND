@@ -12,6 +12,7 @@ const userSchema = new mongoose.Schema({
   profilePic: String,
   following: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
   followedBy: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
+  //tweets: [{ type: mongoose.Schema.Types.ObjectId, ref: "Tweet" }],
 });
 
 module.exports = mongoose.model("User", userSchema);

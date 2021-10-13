@@ -10,6 +10,19 @@ faker.locale = "es";
 module.exports = async () => {
   const newUsers = [];
 
+  newUsers.push({
+    userName: "admin",
+    firstName: "admin",
+    lastName: "admin",
+    email: "admin@admin.com",
+    dob: "1984-08-19",
+    password: bcryptjs.hashSync("admin", bcryptjs.genSaltSync(10)),
+    bio: "BIO de Admin",
+    avatarPic: "demo",
+    profilePic: "demo",
+    following: [],
+    followedBy: [],
+  });
   for (let i = 0; i < 100; i++) {
     newUsers.push({
       userName: faker.internet.userName(),
@@ -27,5 +40,5 @@ module.exports = async () => {
   }
 
   await User.insertMany(newUsers);
-  console.log("[Database] Se corrió el seeder de Articles.");
+  console.log("[Database] Se corrió el seeder de Usuarios!");
 };
