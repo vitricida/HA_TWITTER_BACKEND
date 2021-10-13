@@ -1,174 +1,222 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
 
     <title>Teitter. Es lo que está psando.</title>
-</head>
+  </head>
 
-<body>
-    <div class="row ">
-        <div class="col-6 p-5" style="background-image:url(/public/img/img_root.png);">
-            <div class="p-5">
-                <div class="p-5">
+  <body>
+    <div class="row">
+      <div class="col-6 p-5" style="background-image: url(/public/img/img_root.png)">
+        <div class="p-5">
+          <div class="p-5">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="300"
+              height="300"
+              fill="currentColor"
+              class="bi bi-twitter text-white ml-5 mt-5"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="m-4">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="40"
+            height="40"
+            fill="currentColor"
+            class="bi bi-twitter text-primary ml-5 mt-2 mb-5"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+            />
+          </svg>
+          <h1 class="display-2">Lo que está pasando ahora</h1>
+          <div></div>
+          <h3 class="pt-5">Iniciar sesión en Twitter.</h3>
+          <a
+            type="button"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            class="btn border border-secondary rounded-pill px-5 mt-5 mb-3"
+            type="button"
+          >
+            Iniciar sesión
+          </a>
+          <div class="d-flex flex-row">
+            <p class="mx-2">¿No tienes una cuenta?</p>
+            <a type="button" data-bs-toggle="modal" data-bs-target="#registrer" href="#">
+              Registrate</a
+            >
+          </div>
+        </div>
+      </div>
 
-                    <svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" fill="currentColor"
-                        class="bi bi-twitter text-white ml-5 mt-5" viewBox="0 0 16 16">
-                        <path
-                            d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
-                    </svg>
+      <!-- Modal Login-->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="d-flex flex-row justify-content-between">
+              <button
+                type="button"
+                class="btn-close mx-2 m-2"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
 
-
-
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="30"
+                fill="currentColor"
+                class="bi bi-twitter text-primary mx-2 mt-2"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+                />
+              </svg>
+            </div>
+            <div class="modal-body">
+              <h5 class="modal-title" id="exampleModalLabel">Inicia Sesión</h5>
+              <form class="row g-3 w-75 mx-auto mt-3" action="/login" method="POST">
+                <div class="col-md-12">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" name="email" required />
                 </div>
+                <div class="col-md-12">
+                  <label for="password" class="form-label">Contraseña</label>
+                  <input type="password" class="form-control" name="password" required />
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn border border-secondary rounded-pill"
+                href="/home"
+                aria-hidden="true"
+              >
+                Login
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal register-->
+      <div
+        class="modal fade"
+        id="registrer"
+        tabindex="-1"
+        aria-labelledby="registrer"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="d-flex flex-row justify-content-between">
+              <button
+                type="button"
+                class="btn-close mx-2 m-2"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
 
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="30"
+                fill="currentColor"
+                class="bi bi-twitter text-primary mx-2 mt-2"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+                />
+              </svg>
             </div>
 
-        </div>
-        <div class="col-6">
-            <div class="m-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
-                    class="bi bi-twitter text-primary ml-5 mt-2 mb-5" viewBox="0 0 16 16">
-                    <path
-                        d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
-                </svg>
-                <h1 class="display-2">Lo que está pasando ahora</h1>
-                <div>
-
+            <div class="modal-body">
+              <h5 class="modal-title" id="registrer">Crea una cuenta nueva</h5>
+              <form class="row g-3 w-75 mx-auto" action="/register" method="POST">
+                <div class="col-md-12">
+                  <label for="firstName" class="form-label">Nombre</label>
+                  <input type="text" class="form-control" name="firstName" required />
                 </div>
-                <h3 class="pt-5">Iniciar sesión en Twitter.</h3>
-                <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                    class="btn border border-secondary rounded-pill px-5 mt-5 mb-3" type="button"> Iniciar
-                    sesión
-                </a>
-                <div class="d-flex flex-row">
-                    <p class="mx-2">¿No tienes una cuenta?</p><a type="button" data-bs-toggle="modal"
-                        data-bs-target="#registrer" href="#"> Registrate</a>
+                <div class="col-md-12">
+                  <label for="lastName" class="form-label">Apellido</label>
+                  <input type="text" class="form-control" name="lastName" required />
                 </div>
-
-
+                <div class="col-md-12">
+                  <label for="userName" class="form-label">Nombre de usuario</label>
+                  <input type="text" class="form-control" name="userName" required />
+                </div>
+                <div class="col-md-12">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" name="email" required />
+                </div>
+                <div class="col-md-12">
+                  <label for="password" class="form-label">Contraseña</label>
+                  <input type="password" class="form-control" name="password" required />
+                </div>
+                <div class="col-md-12">
+                  <label for="dob" class="form-label">Fecha de nacimiento</label>
+                  <input type="date" class="form-control" name="dob" required />
+                </div>
+              </form>
             </div>
-
-        </div>
-
-
-        <!-- Modal Login-->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="d-flex flex-row justify-content-between">
-                        <button type="button" class="btn-close mx-2 m-2" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                            class="bi bi-twitter text-primary mx-2 mt-2" viewBox="0 0 16 16">
-                            <path
-                                d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
-                        </svg>
-
-                    </div>
-                    <div class="modal-body">
-                        <h5 class="modal-title id=" exampleModalLabel">Inicia Sesión</h5>
-                        <form class="row g-3 w-75 mx-auto mt-3" action="/login" method="POST">
-                            <div class="col-md-12">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" name="email" required>
-                            </div>
-                            <div class="col-md-12">
-                                <label for="password" class="form-label">Contraseña</label>
-                                <input type="password" class="form-control" name="password" required>
-                            </div>
-
-
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-
-                        <button type="button" class="btn border border-secondary rounded-pill" href="/home"
-                            aria-hidden="true"></i>Login</button>
-                    </div>
-                </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn border border-secondary rounded-pill"
+                href="/home"
+                aria-hidden="true"
+              >
+                Registrarse
+              </button>
             </div>
+          </div>
         </div>
-        <!-- Modal register-->
-        <div class="modal fade" id="registrer" tabindex="-1" aria-labelledby="registrer" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="d-flex flex-row justify-content-between">
-                        <button type="button" class="btn-close mx-2 m-2" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                            class="bi bi-twitter text-primary mx-2 mt-2" viewBox="0 0 16 16">
-                            <path
-                                d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
-                        </svg>
-
-                    </div>
-
-                    <div class="modal-body">
-                        <h5 class="modal-title" id="registrer">Crea una cuenta nueva</h5>
-                        <form class="row g-3 w-75 mx-auto" action="/register" method="POST">
-                            <div class="col-md-12">
-                                <label for="firstName" class="form-label">Nombre</label>
-                                <input type="text" class="form-control" name="firstName" required>
-                            </div>
-                            <div class="col-md-12">
-                                <label for="lastName" class="form-label">Apellido</label>
-                                <input type="text" class="form-control" name="lastName" required>
-                            </div>
-                            <div class="col-md-12">
-                                <label for="userName" class="form-label">Nombre de usuario</label>
-                                <input type="text" class="form-control" name="userName" required>
-                            </div>
-                            <div class="col-md-12">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" name="email" required>
-                            </div>
-                            <div class="col-md-12">
-                                <label for="password" class="form-label">Contraseña</label>
-                                <input type="password" class="form-control" name="password" required>
-                            </div>
-                            <div class="col-md-12">
-                                <label for="dob" class="form-label">Fecha de nacimiento</label>
-                                <input type="date" class="form-control" name="dob" required>
-                            </div>
-
-
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-
-                        <button type="button" class="btn border border-secondary rounded-pill" href="/home"
-                            aria-hidden="true"></i>Registrarse</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+      </div>
     </div>
-
-
 
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     -->
-</body>
-
+  </body>
 </html>
