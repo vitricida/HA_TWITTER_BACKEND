@@ -9,16 +9,16 @@
 }
 
 .sideBarTrendingInfo {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: gray;
 }
 
 .trendingImportant {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 .avatarTrending {
-  width: 2rem;
-  height: 2rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 50%;
 }
 
@@ -26,6 +26,8 @@
   border-radius: 30px;
   background-color: black;
   font-size: 0.7rem;
+  padding: 0.1rem;
+  width: 4rem;
 }
 
 .divTrending {
@@ -33,7 +35,7 @@
 }
 
 #conditions {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: gray;
 }
 
@@ -43,11 +45,37 @@ a {
 }
 
 #twButton {
-  font-size: 1rem;
+  font-size: 0.9rem;
   width: 70%;
   border-radius: 30px;
+  background-color: #00acee;
+  border-bottom: none;
 }
 .rounded-pill {
   width: fit-content;
-  padding: 1rem;
+  padding-right: 1rem;
+}
+
+.homeDiv {
+  border: solid lightgrey 0.5px;
+}
+
+#homeTweetPic {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+}
+
+#inputHome {
+  width: 100%;
+  border: none;
+}
+
+#inputHome::-webkit-input-placeholder {
+  font-size: 25px;
+  line-height: 3;
+}
+
+#twittear {
+  border-top: none;
 }
