@@ -57,23 +57,28 @@ a {
 }
 
 .homeDiv {
-  border: solid lightgrey 0.5px;
+  border: solid rgb(226, 226, 226) 0.2px;
+  border-top: none;
+}
+.homeDivPrincipal {
+  border-bottom: none;
 }
 
 #homeTweetPic {
-  width: 4.5rem;
-  height: 4.5rem;
+  width: 4rem;
+  height: 4rem;
   border-radius: 50%;
 }
 
 #inputHome {
   width: 100%;
   border: none;
+  margin-left: 1rem;
 }
 
 #inputHome::-webkit-input-placeholder {
-  font-size: 25px;
-  line-height: 3;
+  font-size: 20px;
+  line-height: 2;
 }
 
 #twittear {
