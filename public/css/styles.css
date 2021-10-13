@@ -5,9 +5,40 @@
 }
 .sugerencias {
   border-radius: 0.5rem;
+  line-height: 6px;
 }
 
 .sideBarTrendingInfo {
   font-size: 0.8rem;
   color: gray;
+}
+
+.trendingImportant {
+  font-size: 0.9rem;
+}
+.avatarTrending {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+
+.buttonTrending {
+  border-radius: 30px;
+  background-color: black;
+  font-size: 0.7rem;
+}
+
+.divTrending {
+  margin-top: 2rem;
+}
+
+#conditions {
+  font-size: 0.8rem;
+  color: gray;
+}
+
+a {
+  font-size: 0.8rem;
+  text-decoration: none;
+  animation: none;
 }
