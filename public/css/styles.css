@@ -45,7 +45,7 @@ a {
 }
 
 #twButton {
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   width: 70%;
   border-radius: 30px;
   background-color: #00acee;
@@ -53,15 +53,25 @@ a {
 }
 .rounded-pill {
   width: fit-content;
-  padding-right: 1rem;
+  padding: 2rem;
+}
+
+#twInputButton {
+  width: fit-content;
+  border-radius: 20px;
+  background-color: #00acee;
 }
 
 .homeDiv {
   border: solid rgb(226, 226, 226) 0.2px;
-  border-top: none;
+  border-bottom: none;
 }
 .homeDivPrincipal {
   border-bottom: none;
+}
+
+#optionsDiv {
+  border-top: none;
 }
 
 #homeTweetPic {
@@ -90,4 +100,15 @@ a {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+}
+
+.sideBarLeft {
+  color: rgb(44, 44, 44);
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+#principalRow {
+  margin-left: 8rem;
+  margin-right: 8rem;
 }
