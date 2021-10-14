@@ -1,14 +1,6 @@
 //const { User, Tweet } = require("../models/index");
 const { User, Tweet } = require("../models/index");
-/* 
-async function showHome(req, res) {
-  const articles = await Article.findAll({
-    order: [["createdAt", "DESC"]],
-    include: [User, Comment],
-  });
-  console.log(articles);
-  res.render("home", { articles });
-} */
+
 async function showLogin(req, res) {
   res.render("login");
 }
@@ -28,19 +20,16 @@ async function showHome(req, res) {
     console.log(error);
   }
 }
-async function showMyProfile(req, res) {
-  res.render("profile");
-}
 async function showProfile(req, res) {
-  const user = req.query.id;
-  res.send("Esto es el perfil de " + user + ".");
+  const thisUser = await User.findOne({ userName: req.params.userName });
+
+  res.render("profile", { thisUser });
 }
 
 module.exports = {
   showLogin,
   showRegister,
   showHome,
-  showMyProfile,
   showProfile,
   showIndex,
 };

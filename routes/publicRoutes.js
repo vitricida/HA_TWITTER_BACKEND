@@ -10,8 +10,7 @@ publicRouter.get("/", function (req, res) {
 });
 publicRouter.get("/login", pagesController.showLogin);
 publicRouter.get("/register", pagesController.showRegister);
-publicRouter.get("/myprofile", pagesController.showMyProfile);
-publicRouter.get("/profile?:id", pagesController.showProfile);
+publicRouter.get("/profile/:userName", pagesController.showProfile);
 
 publicRouter.post("/login", authController.logIn);
 
