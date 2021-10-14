@@ -3,6 +3,7 @@
   width: 100%;
   border: none;
 }
+
 .sugerencias {
   border-radius: 0.5rem;
   line-height: 6px;
@@ -16,6 +17,7 @@
 .trendingImportant {
   font-size: 0.8rem;
 }
+
 .avatarTrending {
   width: 3rem;
   height: 3rem;
@@ -51,6 +53,7 @@ a {
   background-color: #00acee;
   border-bottom: none;
 }
+
 .rounded-pill {
   width: fit-content;
   padding-right: 1rem;
@@ -60,6 +63,7 @@ a {
   border: solid rgb(226, 226, 226) 0.2px;
   border-top: none;
 }
+
 .homeDivPrincipal {
   border-bottom: none;
 }
@@ -87,6 +91,27 @@ a {
 
 .index_background {
   background-image: url("https://pbs.twimg.com/media/E2TXLwWVgAA7y55.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+
+/* Style perfil*/
+
+#avatar {
+  width: 150px;
+  z-index: 1
+}
+
+#avatarContainer {
+  width: 150px;
+  z-index: 100"
+
+}
+
+#portada {
+  height: 200px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
