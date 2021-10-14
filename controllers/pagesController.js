@@ -1,5 +1,5 @@
 //const { User, Tweet } = require("../models/index");
-const Tweet = require("../models/Tweet");
+const { User, Tweet } = require("../models/index");
 /* 
 async function showHome(req, res) {
   const articles = await Article.findAll({
@@ -20,17 +20,18 @@ async function showRegister(req, res) {
 }
 
 async function showHome(req, res) {
-  console.log("Entre!");
   try {
-    const homeTweets = await Tweet.find({});
-    console.log(homeTweets);
+    const homeTweets = await Tweet.find({}).limit(10).sort("date").populate("owner");
+    const random = Math.floor(Math.random() * 10) + 1;
+    const sugestToFollow = await User.find().skip(random).limit(3);
+    console.log(sugestToFollow);
     res.render("home", { homeTweets });
   } catch (error) {
     console.log(error);
   }
 }
 async function showMyProfile(req, res) {
-  res.send("Esto es My Profile.");
+  res.render("profile");
 }
 async function showProfile(req, res) {
   const user = req.query.id;

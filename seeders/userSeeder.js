@@ -18,8 +18,8 @@ module.exports = async () => {
     dob: "1984-08-19",
     password: bcryptjs.hashSync("admin", bcryptjs.genSaltSync(10)),
     bio: "BIO de Admin",
-    avatarPic: "demo",
-    profilePic: "demo",
+    avatarPic: "default.jpeg",
+    profilePic: "defaut.jpeg",
     following: [],
     followedBy: [],
   });
@@ -32,8 +32,8 @@ module.exports = async () => {
       dob: faker.date.between("1950-01-01", "2005-01-05"),
       password: bcryptjs.hashSync("poroto", bcryptjs.genSaltSync(10)),
       bio: "Mi Bio de prueba, es la mejor BIO!!!",
-      avatarPic: "demo",
-      profilePic: "demo",
+      avatarPic: "default.jpeg",
+      profilePic: "default.jpeg",
       following: [],
       followedBy: [],
     });
