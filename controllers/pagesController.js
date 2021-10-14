@@ -20,11 +20,9 @@ async function showRegister(req, res) {
 }
 
 async function showHome(req, res) {
+  console.log(req.user);
   try {
     const homeTweets = await Tweet.find({}).limit(10).sort("date").populate("owner");
-    const random = Math.floor(Math.random() * 10) + 1;
-    const sugestToFollow = await User.find().skip(random).limit(3);
-    console.log(sugestToFollow);
     res.render("home", { homeTweets });
   } catch (error) {
     console.log(error);
