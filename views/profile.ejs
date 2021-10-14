@@ -58,6 +58,24 @@
             <button type="button" class="btn btn-outline-secondary border-0 w-25">Media</button>
             <button type="button" class="btn btn-outline-secondary border-0">Likes</button>
           </div>
+          <% homeTweets.forEach(tweet => { %>
+          <div class="d-flex justify-content-start align-self-center homeDiv p-3">
+            <img class="avatarTrending" src="/img/profiles/<%= tweet.owner.avatarPic %>" alt="" />
+            <div class="mx-3">
+              <h5><%= tweet.owner.firstName%> <%= tweet.owner.lastName%></h5>
+              <p><%= tweet.content%></p>
+            </div>
+          </div>
+          <div
+            id="optionsDiv"
+            class="d-flex justify-content-around align-self-center homeDiv p-2 mb-2"
+          >
+            <i class="far fa-comment"></i>
+            <i class="fas fa-retweet"></i>
+            <div><i class="far fa-heart"></i> <%= tweet.likes.length%></div>
+            <i class="fas fa-external-link-alt"></i>
+          </div>
+          <% }) %>
         </div>
         <%- include("partials/rightSideBar") %>
       </div>

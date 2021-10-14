@@ -19,18 +19,35 @@ async function showRegister(req, res) {
   res.send("Esto es el Login.");
 }
 
+// Cara los Tweets de los following
 async function showHome(req, res) {
   console.log(req.user);
   try {
-    const homeTweets = await Tweet.find({}).limit(10).sort("date").populate("owner");
+    const homeTweets = await Tweet.find({ owner: { $in: [...req.user.following] } })
+      .limit(20)
+      .sort("date")
+      .populate("owner");
+
     res.render("home", { homeTweets });
   } catch (error) {
     console.log(error);
   }
 }
+
+// Cara Los Tweets del User logeado
 async function showMyProfile(req, res) {
-  res.render("profile");
+  try {
+    const homeTweets = await Tweet.find({ owner: { $in: [req.user] } })
+      .limit(20)
+      .sort("date")
+      .populate("owner");
+
+    res.render("profile", { homeTweets });
+  } catch (error) {
+    console.log(error);
+  }
 }
+
 async function showProfile(req, res) {
   const user = req.query.id;
   res.send("Esto es el perfil de " + user + ".");
