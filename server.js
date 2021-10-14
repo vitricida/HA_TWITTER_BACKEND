@@ -1,6 +1,7 @@
 require("dotenv").config();
 
 const express = require("express");
+require("./database");
 const routes = require("./routes/index");
 const dbInitialSetup = require("./dbInitialSetup");
 const APP_PORT = process.env.APP_PORT || 3000;
@@ -8,6 +9,7 @@ const app = express();
 
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.set("view engine", "ejs");
 
 routes(app);
