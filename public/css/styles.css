@@ -1,6 +1,7 @@
 #search {
   border-radius: 20px;
   width: 100%;
+  outline: none;
   border: none;
 }
 .sugerencias {
@@ -84,6 +85,7 @@ a {
   width: 100%;
   border: none;
   margin-left: 1rem;
+  outline: none;
 }
 
 #inputHome::-webkit-input-placeholder {
