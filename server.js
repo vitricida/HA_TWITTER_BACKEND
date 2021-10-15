@@ -16,9 +16,11 @@ app.set("view engine", "ejs");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const session = require("express-session");
+const MongoStore = require("connect-mongo");
 
 app.use(
   session({
+    store: MongoStore.create({ mongoUrl: process.env.DB_URL }),
     secret: "AlgúnTextoSuperSecreto",
     resave: false, // Docs: "The default value is true, but using the default has been deprecated".
     saveUninitialized: false, // Docs: "The default value is true, but using the default has been deprecated".

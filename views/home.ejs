@@ -10,7 +10,7 @@
         <div class="row">
           <div class="col">
             <div class="d-flex justify-content-start align-self-center homeDiv p-2">
-              <h5><strong>Inicio </strong></h5>
+              <h3><strong>Tweets mas recientes </strong></h3>
             </div>
             <form action="/tweet" method="POST">
               <div
@@ -32,12 +32,18 @@
               </div>
             </form>
             <% homeTweets.forEach(tweet => { %>
-            <div class="d-flex justify-content-start align-self-center homeDiv p-3">
+            <div class="d-flex justify-content-start align-items-center homeDiv p-3">
               <img class="avatarTrending" src="/img/profiles/<%= tweet.owner.avatarPic %>" alt="" />
               <div class="mx-3" style="height: auto !important">
-                <h5><%= tweet.owner.firstName%> <%= tweet.owner.lastName%></h5>
-                <span class="fst-italic fs-6"><%= tweet.date.toLocaleDateString() %></span>
-                <p style="max-width: 100%"><%= tweet.content%></p>
+                <div class="d-flex justify-content-start align-items-center">
+                  <h5 class="m-0"><%= tweet.owner.firstName%> <%= tweet.owner.lastName%></h5>
+                  <span class="px-2 text-muted"> @<%= tweet.owner.userName%></span>
+                  <span class="fst-italic fs-6 text-muted">
+                    - <%= tweet.date.toLocaleDateString() %></span
+                  >
+                </div>
+
+                <p class="text-break p-2 rounded-pill"><%= tweet.content%></p>
               </div>
             </div>
             <div

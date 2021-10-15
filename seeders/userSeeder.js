@@ -18,7 +18,7 @@ module.exports = async () => {
     dob: "1984-08-19",
     password: bcryptjs.hashSync("admin", bcryptjs.genSaltSync(10)),
     bio: "BIO de Admin",
-    avatarPic: "default.jpeg",
+    avatarPic: "admin.gif",
     profilePic: "default.jpeg",
     following: [],
     followedBy: [],
