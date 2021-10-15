@@ -19,7 +19,7 @@ module.exports = async () => {
     password: bcryptjs.hashSync("admin", bcryptjs.genSaltSync(10)),
     bio: "BIO de Admin",
     avatarPic: "default.jpeg",
-    profilePic: "defaut.jpeg",
+    profilePic: "default.jpeg",
     following: [],
     followedBy: [],
   });

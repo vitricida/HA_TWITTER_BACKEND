@@ -1,14 +1,8 @@
 //const { User, Tweet } = require("../models/index");
 const { User, Tweet } = require("../models/index");
 
-async function showLogin(req, res) {
-  res.render("login");
-}
 async function showIndex(req, res) {
   res.render("root");
-}
-async function showRegister(req, res) {
-  res.send("Esto es el Login.");
 }
 
 // Muestra los Tweets de los following
@@ -42,8 +36,6 @@ async function showProfile(req, res) {
 }
 
 module.exports = {
-  showLogin,
-  showRegister,
   showHome,
   showProfile,
   showIndex,
