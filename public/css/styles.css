@@ -141,6 +141,7 @@
 .bottom_user {
   position: fixed;
   bottom: 20px;
+  left: 20px;
   width: 20rem;
   padding: 1rem;
   border: 1px solid rgb(31, 7, 138);
