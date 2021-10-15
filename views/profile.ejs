@@ -25,6 +25,7 @@
             <div class="p-4 text-black" style="background-color: #f8f9fa">
               <div class="ms-3" style="margin-top: 50px">
                 <h5><%= thisUser.firstName%> <%= thisUser.lastName%></h5>
+
                 <p class="text-muted">@<%= thisUser.userName%></p>
               </div>
               <div class="d-flex py-1">
@@ -59,11 +60,12 @@
             <button type="button" class="btn btn-outline-secondary border-0 w-25">Media</button>
             <button type="button" class="btn btn-outline-secondary border-0">Likes</button>
           </div>
-          <% homeTweets.forEach(tweet => { %>
+          <% profileTweets.forEach(tweet => { %>
           <div class="d-flex justify-content-start align-self-center homeDiv p-3">
             <img class="avatarTrending" src="/img/profiles/<%= tweet.owner.avatarPic %>" alt="" />
             <div class="mx-3">
               <h5><%= tweet.owner.firstName%> <%= tweet.owner.lastName%></h5>
+              <span class="fst-italic fs-6"><%= tweet.date.toLocaleDateString() %></span>
               <p><%= tweet.content%></p>
             </div>
           </div>

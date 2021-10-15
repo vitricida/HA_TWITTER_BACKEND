@@ -15,11 +15,7 @@
             <div
               class="d-flex justify-content-start align-self-center homeDiv homeDivPrincipal p-2"
             >
-              <img
-                id="homeTweetPic"
-                src="https://educacionejecutivablog.files.wordpress.com/2015/06/tec_monterrey_empresario_5.jpg"
-                alt=""
-              />
+              <img id="homeTweetPic" src="/img/profiles/<%= thisUser.avatarPic %> " alt="" />
               <textarea id="inputHome" placeholder="¿Que esta pensando?" maxlength="140"></textarea>
             </div>
             <div id="twittear" class="d-flex justify-content-end align-self-center homeDiv p-2">
@@ -33,6 +29,7 @@
               <img class="avatarTrending" src="/img/profiles/<%= tweet.owner.avatarPic %>" alt="" />
               <div class="mx-3">
                 <h5><%= tweet.owner.firstName%> <%= tweet.owner.lastName%></h5>
+                <span class="fst-italic fs-6"><%= tweet.date.toLocaleDateString() %></span>
                 <p><%= tweet.content%></p>
               </div>
             </div>
