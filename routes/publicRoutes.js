@@ -5,14 +5,17 @@ const authController = require("../controllers/authController");
 const userController = require("../controllers/userController");
 
 const validateRegistrationData = require("../middlewares/validateRegistrationData");
+const redirectToHomeIfLoggedIn = require("../middlewares/redirectToHomeIfLoggedIn");
+const isLoggedIn = require("../middlewares/isLoggedIn");
 
-publicRouter.get("/home", pagesController.showHome);
-publicRouter.get("/index", pagesController.showIndex);
+publicRouter.get("/home", isLoggedIn, pagesController.showHome);
+publicRouter.get("/index", redirectToHomeIfLoggedIn, pagesController.showIndex);
 publicRouter.get("/", function (req, res) {
   res.redirect("home");
 });
 
-publicRouter.get("/profile/:userName", pagesController.showProfile);
+publicRouter.get("/profile/:userName", isLoggedIn, pagesController.showProfile);
+publicRouter.get("/logout", authController.logOut);
 
 publicRouter.post("/login", authController.logIn);
 publicRouter.post("/register", validateRegistrationData, userController.register);

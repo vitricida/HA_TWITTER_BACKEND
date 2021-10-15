@@ -50,5 +50,20 @@
         <strong>Twittear</strong>
       </button>
     </div>
+
+    <div class="bottom_user border rounded-pill">
+      <div class="d-flex justify-content-between align-items-center">
+        <img id="homeTweetPic" src="/img/profiles/<%= thisUser.avatarPic %> " alt="" />
+        <div class="align-self-center">
+          <p class="ml-2 trendingImportant fs-4 m-0">
+            <strong><%= thisUser.firstName %> <%= thisUser.lastName %></strong>
+          </p>
+          <p class="sideBarTrendingInfo fs-5">@<%= thisUser.userName %></p>
+        </div>
+        <a href="/logout" class="btn btn-dark ml-2 align-self-center p-3 fs-6 rounded-pill">
+          Log Out <i class="fas fa-sign-out-alt"></i>
+        </a>
+      </div>
+    </div>
   </div>
 </div>
