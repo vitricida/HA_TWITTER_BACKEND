@@ -140,7 +140,7 @@
 .bottom_user {
   position: fixed;
   bottom: 20px;
-  width: 30rem;
+  width: 20rem;
   padding: 1rem;
   border: 1px solid rgb(31, 7, 138);
   background-color: rgb(240, 236, 236);
@@ -163,4 +163,8 @@
   top: 0;
   left: 0;
   padding: 1rem;
+}
+
+.btn_logout {
+  font-size: 0.7rem;
 }
