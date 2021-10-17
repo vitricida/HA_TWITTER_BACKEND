@@ -5,9 +5,8 @@ module.exports = async function (req, res, next) {
   } else {
     console.log("Largo del Tweet supera los 140 caracteres.");
     const errores = {
-      mensaje: "Largo del Tweet supera los 140 caracteres.",
+      errores: "Largo del Tweet no puede superar los 140 caracteres.",
     };
-    res.status(404).send(errores);
-    //res.status(404).render("error", errores);
+    res.status(404).render("error", { errores });
   }
 };

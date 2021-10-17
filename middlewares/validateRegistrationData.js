@@ -7,7 +7,7 @@ module.exports = async function (req, res, next) {
   const errores = {};
 
   if (!regex.test(userName) || !regex.test(firstName) || !regex.test(lastName)) {
-    errores.textos = "El nombre no puede estar vacio ni contener caracteres extraños";
+    errores.textos = "El nombre no puede estar vacío ni contener caracteres extraños";
   }
 
   if (!regexEmail.test(email)) {
@@ -15,19 +15,18 @@ module.exports = async function (req, res, next) {
   }
 
   if (password.length < 6) {
-    errores.password = "La contraseña debe tener un largo de minimo 6 caracteres";
+    errores.password = "La contraseña debe tener un largo mínimo de 6 caracteres";
   }
 
   if (!regexDate.test(dob)) {
-    errores.dob = "la fecha de nacimiento es invalida";
+    errores.dob = "La fecha de nacimiento es invalida";
   }
 
   if (Object.keys(errores).length === 0) {
     return next();
   } else {
-    console.log(dob);
     console.log(errores);
-    res.status(404).send(errores);
-    //res.status(404).render("error", errores);
+    //res.status(404).send(errores);
+    res.status(404).render("error", { errores });
   }
 };
