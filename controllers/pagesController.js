@@ -14,7 +14,8 @@ async function showHome(req, res) {
       .limit(20)
       .sort({ date: "desc" })
       .populate("owner");
-
+    //.populate("likes");
+    console.log(homeTweets);
     res.render("home", { homeTweets, thisUser });
   } catch (error) {
     console.log(error);

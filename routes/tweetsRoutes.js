@@ -7,5 +7,6 @@ const isLoggedIn = require("../middlewares/isLoggedIn");
 
 tweetsRouter.get("/tweet?:id", isLoggedIn, tweetController.showTweet);
 tweetsRouter.post("/tweet", isLoggedIn, validateNewTweet, tweetController.createTweet);
+tweetsRouter.post("/likeToggle", isLoggedIn, tweetController.likeToggle);
 
 module.exports = tweetsRouter;

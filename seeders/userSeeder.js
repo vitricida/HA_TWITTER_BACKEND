@@ -23,7 +23,7 @@ module.exports = async () => {
     following: [],
     followedBy: [],
   });
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 10; i++) {
     newUsers.push({
       userName: faker.internet.userName(),
       firstName: faker.name.firstName(),

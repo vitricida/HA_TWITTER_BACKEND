@@ -170,3 +170,6 @@
 .btn_logout {
   font-size: 0.7rem;
 }
+.cursor_pointer:hover {
+  cursor: pointer;
+}

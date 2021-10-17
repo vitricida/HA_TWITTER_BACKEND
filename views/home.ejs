@@ -36,7 +36,9 @@
               <img class="avatarTrending" src="/img/profiles/<%= tweet.owner.avatarPic %>" alt="" />
               <div class="mx-3" style="height: auto !important">
                 <div class="d-flex justify-content-start align-items-center">
-                  <h5 class="m-0"><%= tweet.owner.firstName%> <%= tweet.owner.lastName%></h5>
+                  <h5 class="m-0">
+                    <%= tweet.owner.firstName%> <%= tweet.owner.lastName%>- <%= tweet.id%>
+                  </h5>
                   <span class="px-2 text-muted"> @<%= tweet.owner.userName%></span>
                   <span class="fst-italic fs-6 text-muted">
                     - <%= tweet.date.toLocaleDateString() %></span
@@ -52,14 +54,38 @@
             >
               <i class="far fa-comment"></i>
               <i class="fas fa-retweet"></i>
-              <div><i class="far fa-heart"></i> <%= tweet.likes.length%></div>
+              <div class="d-inline">
+                <form
+                  action="/likeToggle"
+                  method="POST"
+                  id="like-form<%= tweet.id%>"
+                  class="d-inline"
+                >
+                  <input type="hidden" name="user" value="<%= user.id%>" />
+                  <input type="hidden" name="tweet" value="<%= tweet.id%>" />
+                  <i
+                    class="
+                      far
+                      fa-heart
+                      cursor_pointer
+                      <%if(tweet.likes.includes(user.id))
+                      {
+                      %>text-danger
+                      <%}%>
+                    "
+                    onclick="document.getElementById('like-form<%= tweet.id%>').submit();"
+                  ></i>
+                </form>
+
+                <span class="cursor_pointer d-inline"><%= tweet.likes.length%></span>
+              </div>
               <i class="fas fa-external-link-alt"></i>
             </div>
             <% }) %>
           </div>
         </div>
       </div>
-      <%- include("partials/rightSideBar") %>
+      <%- include("partials/rightSideBar") %> <%- include("partials/scripts.ejs") %>
     </div>
   </body>
 </html>
