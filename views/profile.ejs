@@ -78,7 +78,9 @@
             <i class="fas fa-retweet"></i>
             <div><i class="far fa-heart"></i> <%= tweet.likes.length%></div>
             <i class="fas fa-external-link-alt"></i>
-            <a href="/profile/admin/deleteTweet<%=tweet.id%> "><i class="far fa-trash-alt"></i></a>
+            <a href="/profile/<%=user.userName%>/deleteTweet<%=tweet.id%> "
+              ><i class="far fa-trash-alt"></i
+            ></a>
           </div>
           <% }) %>
         </div>

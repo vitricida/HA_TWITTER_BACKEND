@@ -54,7 +54,7 @@ async function deleteTweet(req, res) {
   const tweet = await Tweet.deleteOne({
     _id: req.params.id,
   });
-  res.redirect("/profile/admin");
+  res.redirect("/profile/" + req.user.userName);
 }
 
 module.exports = {
