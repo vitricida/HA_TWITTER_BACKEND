@@ -85,7 +85,6 @@ app.listen(APP_PORT, () =>
 - En "A quien seguir" generarle 3 usuarios random a la vista Home
 - Arreglar ruta /profile para que tome datos de la persona en cuestion
 - agregar / quitar folower
-- agregar / quitar like
 - borrar tweet
 - edicion del perfil
 
