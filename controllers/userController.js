@@ -6,6 +6,7 @@ async function register(req, res) {
     req.body.password = bcryptjs.hashSync(req.body.password, bcryptjs.genSaltSync(10));
     const newUser = await User.create(req.body);
     console.log(newUser);
+    res.render("root");
   } catch (error) {
     console.log(error);
   }
