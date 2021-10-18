@@ -62,13 +62,17 @@ async function followToggle(req, res) {
       //el usuario si esta en el array, hay que sacarlo
       console.log("Lo sigue, hay que sacarlo!!!!");
       await user.following.pull(userToFollow);
+      await userToFollow.followedBy.pull(user);
       await user.save();
+      await userToFollow.save();
       res.redirect("home");
     } else {
       //el usuario no esta en el array, hay que agregarlo
       console.log("NO lo sigue, hay que agregarlo!!!!");
       await user.following.push(userToFollow);
+      await userToFollow.followedBy.push(user);
       await user.save();
+      await userToFollow.save();
       res.redirect("home");
     }
   } catch (error) {

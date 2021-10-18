@@ -30,11 +30,11 @@
               </div>
               <div class="d-flex py-1">
                 <div class="px-3">
-                  <p class="mb-1 h5">0</p>
+                  <p class="mb-1 h5"><%= thisUser.followedBy.length%></p>
                   <p class="small text-muted mb-0">Followers</p>
                 </div>
                 <div>
-                  <p class="mb-1 h5">0</p>
+                  <p class="mb-1 h5"><%= thisUser.following.length%></p>
                   <p class="small text-muted mb-0">Following</p>
                 </div>
                 <% if (user.userName === thisUser.userName) { %>
