@@ -36,9 +36,7 @@
               <img class="avatarTrending" src="/img/profiles/<%= tweet.owner.avatarPic %>" alt="" />
               <div class="mx-3" style="height: auto !important">
                 <div class="d-flex justify-content-start align-items-center">
-                  <h5 class="m-0">
-                    <%= tweet.owner.firstName%> <%= tweet.owner.lastName%>- <%= tweet.id%>
-                  </h5>
+                  <h5 class="m-0"><%= tweet.owner.firstName%> <%= tweet.owner.lastName%></h5>
                   <span class="px-2 text-muted"> @<%= tweet.owner.userName%></span>
                   <span class="fst-italic fs-6 text-muted">
                     - <%= tweet.date.toLocaleDateString() %></span
