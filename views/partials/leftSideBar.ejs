@@ -97,7 +97,15 @@
     </nav>
     <div class="gap-2 mt-2 mx-auto">
       <button id="twButton" class="btn btn-primary btn-lg col-10" href="#">
-        <strong>Twittear</strong>
+        <a
+          type="button"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal1"
+          type="button"
+          href=" #"
+          id="twButtonA"
+          ><strong>Twittear</strong></a
+        >
       </button>
     </div>
 
@@ -146,6 +154,45 @@
       </div>
       <div class="modal-body m-0 d-flex justify-content-center">
         <h5>Lo sentimos, esta función no esta disponible.</h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="exampleModal1"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content modalTw2">
+      <div class="d-flex justify-content-end p-3">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body m-0 d-flex justify-content-center">
+        <form action="/tweet" method="POST">
+          <div class="d-flex justify-content-start align-self-center homeDiv homeDivPrincipal p-2">
+            <img id="homeTweetPic" src="/img/profiles/<%= thisUser.avatarPic %> " alt="" />
+
+            <textarea
+              id="inputHome"
+              name="tweetContent"
+              placeholder="¿Que esta pensando?"
+              maxlength="141"
+              class="modalTw"
+            ></textarea>
+          </div>
+          <div
+            id="twittear"
+            class="d-flex justify-content-end align-self-center homeDiv p-2 modalTwHome"
+          >
+            <button id="twInputButton" type="submit" class="btn btn-primary">
+              <strong>Twittear </strong>
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   </div>

@@ -52,6 +52,11 @@
   background-color: #00acee;
   border-bottom: none;
 }
+
+#twButtonA {
+  text-decoration: none;
+  color: white;
+}
 .rounded-pill {
   width: fit-content;
   /* padding: 2rem; */
@@ -186,4 +191,16 @@ a {
 .fa-trash-alt {
   text-decoration: none;
   color: red;
+}
+
+.modalTwHome {
+  border-bottom: solid rgb(226, 226, 226) 0.2px;
+}
+
+.modalTw {
+  width: 50rem;
+}
+
+.modalTw2 {
+  width: fit-content;
 }
