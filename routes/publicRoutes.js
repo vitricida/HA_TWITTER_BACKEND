@@ -19,5 +19,6 @@ publicRouter.get("/logout", authController.logOut);
 
 publicRouter.post("/login", authController.logIn);
 publicRouter.post("/register", validateRegistrationData, userController.register);
+publicRouter.get("/searchUsers", userController.searchUser);
 
 module.exports = publicRouter;
