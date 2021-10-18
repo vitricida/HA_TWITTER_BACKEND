@@ -5,30 +5,6 @@ async function showIndex(req, res) {
   res.render("root");
 }
 
-//Mostar Usuarios
-async function showUser(req, res) {
-  try {
-    const thisUser = await User.findOne({ id: req.user.id });
-    const users = await User.find({ _id: { $ne: req.user._id } });
-    const ids = [];
-    for (member of users) ids.push(member._id);
-    const shuffled = ids.sort(function () {
-      return 0.5 - Math.random();
-    });
-    const selected = shuffled.slice(0, 4);
-    const randomUsers = [];
-
-    for (id of selected) {
-      const user = await User.findById(id);
-      randomUsers.push(user);
-    }
-
-    res.render("users", { users, randomUsers, thisUser });
-  } catch (error) {
-    console.log(error);
-  }
-}
-
 // Muestra los Tweets de los following
 async function showHome(req, res) {
   console.log(req.user);
@@ -93,5 +69,4 @@ module.exports = {
   showHome,
   showProfile,
   showIndex,
-  showUser,
 };

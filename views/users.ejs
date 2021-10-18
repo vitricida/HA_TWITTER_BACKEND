@@ -12,21 +12,33 @@
             <div class="d-flex justify-content-start align-self-center homeDiv p-2">
               <h3><strong> Usuarios </strong></h3>
             </div>
-
-            <% users.forEach(user => { %>
+            <% if(users.length === 0){ %>
+            <p class="p-2 fs-5">No se encontraron coincidencias para la busqueda.</p>
+            <%}%> <% users.forEach(userFound => { %>
             <div class="d-flex justify-content-start align-items-center homeDiv p-3">
-              <img class="avatarTrending" src="/img/profiles/<%= user.avatarPic %>" alt="" />
+              <img class="avatarTrending" src="/img/profiles/<%= userFound.avatarPic %>" alt="" />
               <div class="mx-3" style="height: auto !important">
                 <div class="d-flex justify-content-start align-items-center">
-                  <h5 class="m-0"><%= users.firstName%> <%= user.lastName%></h5>
-                  <span class="px-2 text-muted"> @<%= user.userName%></span>
+                  <h5 class="m-0"><%= userFound.firstName%> <%= userFound.lastName%></h5>
+                  <span class="px-2 text-muted"> @<%= userFound.userName%></span>
                 </div>
                 <div class="mt-2">
-                  <form action="/follow" method="POST" id="follow<%= user.id%>" class="d-inline">
-                    <button class="btn btn-outline-primary rounded-pill">
-                      Seguir
-                      <i class="" onclick=""> </i>
+                  <form
+                    action="/follow"
+                    method="POST"
+                    id="follow<%= userFound.id%>"
+                    class="d-inline"
+                  >
+                    <input type="hidden" name="userToFollow" value="<%= userFound.id%>" />
+                    <% if (thisUser.following.includes(userFound.id)) { %>
+                    <button class="btn btn-outline-danger rounded-pill" type="submit">
+                      Dejar de Seguir
                     </button>
+                    <% } else { %>
+                    <button class="btn btn-outline-primary rounded-pill" type="submit">
+                      Seguir
+                    </button>
+                    <%}%>
                   </form>
                 </div>
               </div>

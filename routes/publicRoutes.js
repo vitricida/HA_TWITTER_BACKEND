@@ -8,7 +8,7 @@ const validateRegistrationData = require("../middlewares/validateRegistrationDat
 const redirectToHomeIfLoggedIn = require("../middlewares/redirectToHomeIfLoggedIn");
 const isLoggedIn = require("../middlewares/isLoggedIn");
 
-publicRouter.get("/users", pagesController.showUser);
+//publicRouter.get("/users", pagesController.showUser);
 
 publicRouter.get("/home", isLoggedIn, pagesController.showHome);
 publicRouter.get("/index", redirectToHomeIfLoggedIn, pagesController.showIndex);
@@ -21,6 +21,8 @@ publicRouter.get("/logout", authController.logOut);
 
 publicRouter.post("/login", authController.logIn);
 publicRouter.post("/register", validateRegistrationData, userController.register);
-publicRouter.get("/searchUsers/:lookFor", userController.searchUser);
+publicRouter.get("/searchUsers", userController.searchUser);
+
+publicRouter.post("/follow", userController.followToggle);
 
 module.exports = publicRouter;
