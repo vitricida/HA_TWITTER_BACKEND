@@ -4,6 +4,8 @@ const bcryptjs = require("bcryptjs");
 async function register(req, res) {
   try {
     req.body.password = bcryptjs.hashSync(req.body.password, bcryptjs.genSaltSync(10));
+    req.body.avatarPic = "default.jpeg";
+    req.body.profilePic = "default.jpeg";
     const newUser = await User.create(req.body);
     console.log(newUser);
     res.render("root");
