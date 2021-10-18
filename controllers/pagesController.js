@@ -7,9 +7,10 @@ async function showIndex(req, res) {
 
 // Muestra los Tweets de los following
 async function showHome(req, res) {
-  console.log(req.user);
+  console.log(req.user.id);
   try {
-    const thisUser = await User.findOne({ id: req.user.id });
+    const thisUser = await User.findOne(req.user);
+    console.log(thisUser);
     const homeTweets = await Tweet.find({ owner: { $in: [...req.user.following, req.user] } })
       .limit(20)
       .sort({ date: "desc" })
@@ -40,7 +41,7 @@ async function showHome(req, res) {
 //Muestra los Tweets del usuario
 async function showProfile(req, res) {
   try {
-    const thisUser = await User.findOne({ userName: req.params.userName });
+    const thisUser = await User.findOne(req.user);
     const profileTweets = await Tweet.find({ owner: { $in: [req.user] } })
       .limit(20)
       .sort({ date: "desc" })

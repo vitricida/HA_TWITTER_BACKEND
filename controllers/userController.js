@@ -16,7 +16,7 @@ async function register(req, res) {
 
 async function searchUser(req, res) {
   try {
-    const thisUser = await User.findOne({ id: req.user.id });
+    const thisUser = await User.findOne(req.user);
 
     const users = await User.find({ _id: { $ne: req.user._id } });
     const ids = [];
@@ -38,6 +38,7 @@ async function searchUser(req, res) {
     const result = await User.find({
       $and: [{ $or: [{ userName: lookFor }, { lastName: lookFor }, { firstName: lookFor }] }],
     });
+    //aplicarle un filtro a result sacando al usuario logueado
     res.render("users", { users: result, randomUsers, thisUser });
   } catch (error) {
     console.log(error);
