@@ -182,3 +182,8 @@ a {
   height: 3rem;
   border-radius: 50%;
 }
+#myBtn {
+  background: transparent;
+  border: none !important;
+  font-size: 0;
+}
