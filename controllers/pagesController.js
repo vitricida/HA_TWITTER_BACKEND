@@ -8,10 +8,22 @@ async function showIndex(req, res) {
 //Mostar Usuarios
 async function showUser(req, res) {
   try {
-    const users = await User.find().limit(20);
-    console.log(users);
+    const thisUser = await User.findOne({ id: req.user.id });
+    const users = await User.find({ _id: { $ne: req.user._id } });
+    const ids = [];
+    for (member of users) ids.push(member._id);
+    const shuffled = ids.sort(function () {
+      return 0.5 - Math.random();
+    });
+    const selected = shuffled.slice(0, 4);
+    const randomUsers = [];
 
-    res.render("users", { users });
+    for (id of selected) {
+      const user = await User.findById(id);
+      randomUsers.push(user);
+    }
+
+    res.render("users", { users, randomUsers, thisUser });
   } catch (error) {
     console.log(error);
   }
@@ -27,10 +39,23 @@ async function showHome(req, res) {
       .sort({ date: "desc" })
       .populate("owner");
     //.populate("likes");
-    const users = await User.find().limit(4); //Error en esta línea
-    console.log(users);
+    //const users = await User.find().limit(4); //Error en esta línea
+    //console.log(users);
+    const users = await User.find({ _id: { $ne: req.user._id } });
+    const ids = [];
+    for (member of users) ids.push(member._id);
+    const shuffled = ids.sort(function () {
+      return 0.5 - Math.random();
+    });
+    const selected = shuffled.slice(0, 4);
+    const randomUsers = [];
 
-    res.render("home", { homeTweets, thisUser, users });
+    for (id of selected) {
+      const user = await User.findById(id);
+      randomUsers.push(user);
+    }
+
+    res.render("home", { homeTweets, thisUser, randomUsers });
   } catch (error) {
     console.log(error);
   }
@@ -44,7 +69,21 @@ async function showProfile(req, res) {
       .limit(20)
       .sort({ date: "desc" })
       .populate("owner");
-    res.render("profile", { thisUser, profileTweets });
+
+    const users = await User.find({ _id: { $ne: req.user._id } });
+    const ids = [];
+    for (member of users) ids.push(member._id);
+    const shuffled = ids.sort(function () {
+      return 0.5 - Math.random();
+    });
+    const selected = shuffled.slice(0, 4);
+    const randomUsers = [];
+
+    for (id of selected) {
+      const user = await User.findById(id);
+      randomUsers.push(user);
+    }
+    res.render("profile", { thisUser, profileTweets, randomUsers });
   } catch (error) {
     console.log(error);
   }

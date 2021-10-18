@@ -43,47 +43,26 @@
   </div>
   <div class="mt-3 bg-light p-3 sugerencias">
     <h5><strong>A quien seguir</strong></h5>
+    <% for(user of randomUsers) { %>
+    <div class="divTrending d-flex justify-content-around">
+      <img
+        class="avatarTrending align-self-center"
+        src="/img/profiles/<%= user.avatarPic %>"
+        alt=""
+      />
+      <div class="align-self-center">
+        <p class="ml-2 trendingImportant">
+          <strong><%= user.firstName%> <%= user.lastName%></strong>
+        </p>
+        <p class="sideBarTrendingInfo">@<%= user.userName%></p>
+      </div>
+      <button class="btn btn-dark buttonTrending ml-2 align-item-center align-self-center">
+        Seguir
+      </button>
+    </div>
 
-    <div class="divTrending d-flex justify-content-around">
-      <img
-        class="avatarTrending align-self-center"
-        src="https://www.redaccionmedica.com/images/destacados/-buscamos-la-recuperacion-completa-de-la-persona-con-depresion--7353.jpg"
-        alt=""
-      />
-      <div class="align-self-center">
-        <p class="ml-2 trendingImportant"><strong>Juan Perez</strong></p>
-        <p class="sideBarTrendingInfo">@juanperez</p>
-      </div>
-      <button class="btn btn-dark buttonTrending ml-2 align-self-center">Seguir</button>
-    </div>
-    <div class="divTrending d-flex justify-content-around">
-      <img
-        class="avatarTrending align-self-center"
-        src="https://www.webconsultas.com/sites/default/files/styles/wc_adaptive_image__small/public/articulos/perfil-resilencia.jpg"
-        alt=""
-      />
-      <div class="align-self-center">
-        <p class="ml-2 trendingImportant"><strong>Maria Gomez</strong></p>
-        <p class="sideBarTrendingInfo">@mariagonzalez</p>
-      </div>
-      <button class="btn btn-dark buttonTrending ml-2 align-item-center align-self-center">
-        Seguir
-      </button>
-    </div>
-    <div class="divTrending d-flex justify-content-around">
-      <img
-        class="avatarTrending align-self-center"
-        src="https://img.freepik.com/foto-gratis/retrato-joven-sonriente-gafas_171337-4842.jpg?size=626&ext=jpg"
-        alt=""
-      />
-      <div class="align-self-center">
-        <p class="ml-2 trendingImportant"><strong>Pablo Garcia</strong></p>
-        <p class="sideBarTrendingInfo">@pablogarcia</p>
-      </div>
-      <button class="btn btn-dark buttonTrending ml-2 align-item-center align-self-center">
-        Seguir
-      </button>
-    </div>
+    <% } %>
+
     <div class="mt-4">
       <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" href=" #"
         >Mostrar mas</a

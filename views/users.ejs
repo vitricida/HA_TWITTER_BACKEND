@@ -5,6 +5,7 @@
   </head>
   <body>
     <div id="principalRow" class="row">
+      <%- include("partials/leftSideBar",{ user }) %>
       <div class="col-md-6">
         <div class="row">
           <div class="col">
@@ -12,16 +13,16 @@
               <h3><strong> Usuarios </strong></h3>
             </div>
 
-            <% users.forEach(users => { %>
+            <% users.forEach(user => { %>
             <div class="d-flex justify-content-start align-items-center homeDiv p-3">
-              <img class="avatarTrending" src="/img/profiles/<%= users.avatarPic %>" alt="" />
+              <img class="avatarTrending" src="/img/profiles/<%= user.avatarPic %>" alt="" />
               <div class="mx-3" style="height: auto !important">
                 <div class="d-flex justify-content-start align-items-center">
-                  <h5 class="m-0"><%= users.firstName%> <%= users.lastName%></h5>
-                  <span class="px-2 text-muted"> @<%= users.userName%></span>
+                  <h5 class="m-0"><%= users.firstName%> <%= user.lastName%></h5>
+                  <span class="px-2 text-muted"> @<%= user.userName%></span>
                 </div>
                 <div class="mt-2">
-                  <form action="/follow" method="POST" id="follow<%= users.id%>" class="d-inline">
+                  <form action="/follow" method="POST" id="follow<%= user.id%>" class="d-inline">
                     <button class="btn btn-outline-primary rounded-pill">
                       Seguir
                       <i class="" onclick=""> </i>
@@ -35,7 +36,7 @@
           </div>
         </div>
       </div>
-      <%- include("partials/scripts.ejs") %>
+      <%- include("partials/rightSideBar") %> <%- include("partials/scripts.ejs") %>
     </div>
   </body>
 </html>
