@@ -50,8 +50,16 @@ async function likeToggle(req, res) {
   }
 }
 
+async function deleteTweet(req, res) {
+  const tweet = await Tweet.deleteOne({
+    _id: req.params.id,
+  });
+  res.redirect("/profile/admin");
+}
+
 module.exports = {
   showTweet,
   createTweet,
   likeToggle,
+  deleteTweet,
 };
