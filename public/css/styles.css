@@ -109,6 +109,9 @@
   background-position: center center;
 }
 
+a {
+  text-decoration: none;
+}
 .sideBarLeft {
   color: rgb(44, 44, 44);
   font-size: 1.3rem;
