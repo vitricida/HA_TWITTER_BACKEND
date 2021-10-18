@@ -11,6 +11,21 @@ async function register(req, res) {
   }
 }
 
+async function searchUser(req, res) {
+  console.log("aca llegue");
+  console.log(req.params);
+
+  const param = req.params.lookFor;
+  const lookFor = new RegExp(param, "i");
+
+  console.log(lookFor);
+  const result = await User.find({
+    $and: [{ $or: [{ userName: lookFor }, { lastName: lookFor }, { firstName: lookFor }] }],
+  });
+  console.log(result);
+}
+
 module.exports = {
   register,
+  searchUser,
 };
