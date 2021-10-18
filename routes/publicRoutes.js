@@ -8,6 +8,8 @@ const validateRegistrationData = require("../middlewares/validateRegistrationDat
 const redirectToHomeIfLoggedIn = require("../middlewares/redirectToHomeIfLoggedIn");
 const isLoggedIn = require("../middlewares/isLoggedIn");
 
+publicRouter.get("/users", pagesController.showUser);
+
 publicRouter.get("/home", isLoggedIn, pagesController.showHome);
 publicRouter.get("/index", redirectToHomeIfLoggedIn, pagesController.showIndex);
 publicRouter.get("/", function (req, res) {
