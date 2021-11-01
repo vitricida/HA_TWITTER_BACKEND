@@ -23,7 +23,7 @@ module.exports = async () => {
     following: [],
     followedBy: [],
   });
-  /* for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 10; i++) {
     newUsers.push({
       userName: faker.internet.userName(),
       firstName: faker.name.firstName(),
@@ -37,7 +37,7 @@ module.exports = async () => {
       following: [],
       followedBy: [],
     });
-  } */
+  }
 
   await User.insertMany(newUsers);
   console.log("[Database] Se corrió el seeder de Usuarios!");
