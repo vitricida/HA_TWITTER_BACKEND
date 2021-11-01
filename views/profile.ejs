@@ -24,9 +24,11 @@
             </div>
             <div class="p-4 text-black" style="background-color: #f8f9fa">
               <div class="ms-3" style="margin-top: 50px">
-                <h5><%= thisUser.firstName%> <%= thisUser.lastName%></h5>
-
-                <p class="text-muted">@<%= thisUser.userName%></p>
+                <h5>
+                  @<%= thisUser.userName%> -
+                  <span class="text-muted"><%= thisUser.firstName%> <%= thisUser.lastName%></span>
+                </h5>
+                <p class="text-muted"><%= thisUser.bio%></p>
               </div>
               <div class="d-flex py-1">
                 <div class="px-3">

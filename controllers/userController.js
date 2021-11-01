@@ -8,6 +8,7 @@ async function register(req, res) {
     req.body.profilePic = "default.jpeg";
     const newUser = await User.create(req.body);
     console.log(newUser);
+    alert("Usuario registrado correctamente!");
     res.render("root");
   } catch (error) {
     console.log(error);
@@ -39,6 +40,7 @@ async function searchUser(req, res) {
       $and: [{ $or: [{ userName: lookFor }, { lastName: lookFor }, { firstName: lookFor }] }],
     });
     //aplicarle un filtro a result sacando al usuario logueado
+
     res.render("users", { users: result, randomUsers, thisUser });
   } catch (error) {
     console.log(error);
