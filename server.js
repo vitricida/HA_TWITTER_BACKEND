@@ -9,11 +9,11 @@ const routes = require("./routes/index");
 const dbInitialSetup = require("./dbInitialSetup");
 const APP_PORT = process.env.APP_PORT || 3000;
 const app = express();
+app.use(cors());
 
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(cors());
 
 app.set("view engine", "ejs");
 const MongoStore = require("connect-mongo");

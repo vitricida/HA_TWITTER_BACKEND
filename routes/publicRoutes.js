@@ -1,6 +1,6 @@
 const express = require("express");
 const checkJwt = require("express-jwt");
-
+var cors = require("cors");
 const publicRouter = express.Router();
 const pagesController = require("../controllers/pagesController");
 const authController = require("../controllers/authController");
@@ -24,7 +24,7 @@ publicRouter.get("/", function (req, res) {
 });
 
 //publicRouter.get("/profile/:userName", isLoggedIn, pagesController.showProfile);
-publicRouter.post("/login", authController.logIn);
+publicRouter.post("/login", cors(), authController.logIn);
 
 publicRouter.get("/:userName", pagesController.showProfile);
 publicRouter.get("/logout", authController.logOut);
