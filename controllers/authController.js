@@ -12,7 +12,22 @@ async function logIn(req, res) {
     if (user) {
       if (bcryptjs.compareSync(passWord, user.password)) {
         const token = jwt.sign({ userId: user._id, userName: user.userName }, process.env.SECRET);
-        res.status(200).json({ token: token, userName: user.userName, id: user._id });
+        console.log("desde el backend: ", {
+          token: token,
+          userName: user.userName,
+          userFirstName: user.firstName,
+          userLastName: user.lastName,
+          userAvatar: user.avatarPic,
+          id: user._id,
+        });
+        res.status(200).json({
+          token: token,
+          userName: user.userName,
+          userFirstName: user.firstName,
+          userLastName: user.lastName,
+          userAvatar: user.avatarPic,
+          id: user._id,
+        });
       } else {
         res.status(401).send("ERROR : datos invalidos");
       }
