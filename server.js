@@ -1,6 +1,5 @@
 require("dotenv").config();
-const bcrypt = require("bcryptjs");
-const User = require("./models/User");
+
 var cors = require("cors");
 
 const express = require("express");

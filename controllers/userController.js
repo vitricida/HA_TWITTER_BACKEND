@@ -2,6 +2,8 @@ const User = require("../models/User");
 const bcryptjs = require("bcryptjs");
 
 async function register(req, res) {
+  console.log("Entré al register");
+  console.log(req.body);
   try {
     req.body.password = bcryptjs.hashSync(req.body.password, bcryptjs.genSaltSync(10));
     req.body.avatarPic = "default.jpeg";
@@ -9,7 +11,13 @@ async function register(req, res) {
     const newUser = await User.create(req.body);
     console.log(newUser);
     alert("Usuario registrado correctamente!");
-    res.render("root");
+    res.json({
+      newUserName: newUser.userName,
+      newFirstName: newUser.firstName,
+      newLastName: newUser.lastName,
+      newEmail: newUser.email,
+      bornDate: newUser.dob,
+    });
   } catch (error) {
     console.log(error);
   }

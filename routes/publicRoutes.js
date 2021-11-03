@@ -30,12 +30,13 @@ publicRouter.get(
   pagesController.randomUsers,
 );
 
+publicRouter.post("/register", userController.register);
+
 //publicRouter.get("/profile/:userName", isLoggedIn, pagesController.showProfile);
 publicRouter.post("/login", authController.logIn);
 
 publicRouter.get("/:userName", pagesController.showProfile);
 
-publicRouter.post("/register", validateRegistrationData, userController.register);
 publicRouter.get("/searchUsers", userController.searchUser);
 
 publicRouter.post("/follow", userController.followToggle);
