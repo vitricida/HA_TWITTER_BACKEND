@@ -1,6 +1,5 @@
 const express = require("express");
 const checkJwt = require("express-jwt");
-var cors = require("cors");
 const publicRouter = express.Router();
 const pagesController = require("../controllers/pagesController");
 const authController = require("../controllers/authController");
@@ -19,11 +18,22 @@ publicRouter.get(
   pagesController.tweets,
 );
 
+publicRouter.get(
+  "/user",
+  checkJwt({ secret: process.env.SECRET, algorithms: ["HS256"] }),
+  pagesController.user,
+);
+
+publicRouter.get(
+  "/randomUsers",
+  checkJwt({ secret: process.env.SECRET, algorithms: ["HS256"] }),
+  pagesController.randomUsers,
+);
+
 //publicRouter.get("/profile/:userName", isLoggedIn, pagesController.showProfile);
-publicRouter.post("/login", cors(), authController.logIn);
+publicRouter.post("/login", authController.logIn);
 
 publicRouter.get("/:userName", pagesController.showProfile);
-publicRouter.get("/logout", authController.logOut);
 
 publicRouter.post("/register", validateRegistrationData, userController.register);
 publicRouter.get("/searchUsers", userController.searchUser);

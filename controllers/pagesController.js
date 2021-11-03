@@ -10,21 +10,23 @@ async function tweets(req, res) {
       .limit(20)
       .sort({ date: "desc" })
       .populate("owner");
-    res.status(200).json({ thisUser, homeTweets });
+    res.status(200).json(homeTweets);
   } catch (error) {
     console.log(error);
   }
 }
-// Muestra los Tweets de los following
-/* async function showHome(req, res) {
+async function user(req, res) {
   try {
-    const thisUser = await User.findOne({ _id: req.user.userId });
-    console.log("ESTE ES EL CONSOLE LOG : ", req.user);
-    const homeTweets = await Tweet.find({ owner: { $in: [...thisUser.following, thisUser] } })
-      .limit(20)
-      .sort({ date: "desc" })
-      .populate("owner");
-    const users = await User.find({ _id: { $ne: thisUser._id } });
+    const thisUser = await User.findById(req.user.userId);
+    res.status(200).json(thisUser);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+async function randomUsers(req, res) {
+  try {
+    const users = await User.find({ _id: { $ne: req.user.userId } });
     const ids = [];
     for (member of users) ids.push(member._id);
     const shuffled = ids.sort(function () {
@@ -37,14 +39,12 @@ async function tweets(req, res) {
       const user = await User.findById(id);
       randomUsers.push(user);
     }
-
-    res.json({ homeTweets, thisUser, randomUsers });
+    res.status(200).json(randomUsers);
   } catch (error) {
     console.log(error);
   }
-} */
+}
 
-//Muestra los Tweets del usuario
 async function showProfile(req, res) {
   console.log("entre a profile");
   try {
@@ -75,6 +75,8 @@ async function showProfile(req, res) {
 
 module.exports = {
   tweets,
+  user,
+  randomUsers,
   showProfile,
   showIndex,
 };
