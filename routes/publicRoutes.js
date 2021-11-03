@@ -14,14 +14,10 @@ const isLoggedIn = require("../middlewares/isLoggedIn");
 
 //publicRouter.get("/home", isLoggedIn, pagesController.showHome);
 publicRouter.get(
-  "/home",
+  "/tweets",
   checkJwt({ secret: process.env.SECRET, algorithms: ["HS256"] }),
-  pagesController.showHome,
+  pagesController.tweets,
 );
-//publicRouter.get("/index", redirectToHomeIfLoggedIn, pagesController.showIndex);
-publicRouter.get("/", function (req, res) {
-  res.redirect("home");
-});
 
 //publicRouter.get("/profile/:userName", isLoggedIn, pagesController.showProfile);
 publicRouter.post("/login", cors(), authController.logIn);

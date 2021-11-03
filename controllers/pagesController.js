@@ -3,9 +3,20 @@ const { User, Tweet } = require("../models/index");
 async function showIndex(req, res) {
   res.render("root");
 }
-
+async function tweets(req, res) {
+  try {
+    const thisUser = await User.findById(req.user.userId);
+    const homeTweets = await Tweet.find({ owner: { $in: [...thisUser.following, thisUser] } })
+      .limit(20)
+      .sort({ date: "desc" })
+      .populate("owner");
+    res.status(200).json({ thisUser, homeTweets });
+  } catch (error) {
+    console.log(error);
+  }
+}
 // Muestra los Tweets de los following
-async function showHome(req, res) {
+/* async function showHome(req, res) {
   try {
     const thisUser = await User.findOne({ _id: req.user.userId });
     console.log("ESTE ES EL CONSOLE LOG : ", req.user);
@@ -31,7 +42,7 @@ async function showHome(req, res) {
   } catch (error) {
     console.log(error);
   }
-}
+} */
 
 //Muestra los Tweets del usuario
 async function showProfile(req, res) {
@@ -63,7 +74,7 @@ async function showProfile(req, res) {
 }
 
 module.exports = {
-  showHome,
+  tweets,
   showProfile,
   showIndex,
 };
