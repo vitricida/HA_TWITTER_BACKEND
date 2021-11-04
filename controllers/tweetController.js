@@ -6,22 +6,26 @@ async function showTweet(req, res) {
   res.send("Voy a mostrar el tweet con ID : " + tweet + ".");
 }
 
+//tweet
 async function createTweet(req, res) {
+  console.log(req.user);
+
   try {
-    const newTweet = await Tweet.create({
-      content: req.body.tweetContent,
+    console.log(req.user);
+    /* const newTweet = await Tweet.create({
+      content: req.body.content,
       owner: req.user.id,
       likes: [],
       date: new Date(),
     });
     console.log(newTweet);
-    res.redirect("/home");
+    res.json(); */
   } catch (error) {
     console.log(error);
     const errores = {
       mensaje: error,
     };
-    res.status(404).send(errores);
+    res.status(404).json(errores);
     //res.status(404).render("error", errores);
   }
 }
