@@ -56,9 +56,10 @@ async function searchUser(req, res) {
 }
 
 async function followToggle(req, res) {
-  /* console.log(req.body);
-  console.log(req.user.id); */
-  try {
+  console.log(req.method);
+  console.log(req.user.userId);
+  console.log(req.body.userToFollow);
+  /* try {
     const user = await User.findOne({ _id: req.user.id });
     const userToFollow = await User.findOne({ _id: req.body.userToFollow });
     const found = user.following.find(
@@ -91,8 +92,7 @@ async function followToggle(req, res) {
       mensaje: error,
     };
     res.status(404).send(errores);
-    //res.status(404).render("error", errores);}
-  }
+  } */
 }
 
 module.exports = {

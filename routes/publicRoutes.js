@@ -29,6 +29,11 @@ publicRouter.get(
   checkJwt({ secret: process.env.SECRET, algorithms: ["HS256"] }),
   pagesController.user,
 );
+publicRouter.patch(
+  "/user",
+  checkJwt({ secret: process.env.SECRET, algorithms: ["HS256"] }),
+  userController.followToggle,
+);
 
 publicRouter.get(
   "/randomUsers",
@@ -44,6 +49,6 @@ publicRouter.get("/:userName", pagesController.showProfile);
 //publicRouter.post("/register", validateRegistrationData, userController.register);
 publicRouter.get("/searchUsers", userController.searchUser);
 
-publicRouter.post("/follow", userController.followToggle);
+//publicRouter.post("/follow", userController.followToggle);
 
 module.exports = publicRouter;
