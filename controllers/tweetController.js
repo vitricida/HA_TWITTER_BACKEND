@@ -8,18 +8,16 @@ async function showTweet(req, res) {
 
 //tweet
 async function createTweet(req, res) {
+  //console.log("ACA EL CONTENT del CreateTweet: ", req.body);
   console.log(req.user);
-
   try {
-    console.log(req.user);
-    /* const newTweet = await Tweet.create({
+    const newTweet = await Tweet.create({
       content: req.body.content,
-      owner: req.user.id,
+      owner: req.user.userId,
       likes: [],
       date: new Date(),
     });
-    console.log(newTweet);
-    res.json(); */
+    res.status(200).json(newTweet);
   } catch (error) {
     console.log(error);
     const errores = {

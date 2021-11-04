@@ -8,7 +8,7 @@ const isLoggedIn = require("../middlewares/isLoggedIn");
 
 tweetsRouter.get("/tweet?:id", isLoggedIn, tweetController.showTweet);
 //tweet route
-tweetsRouter.post("/tweet", tweetController.createTweet);
+/* tweetsRouter.post("/tweet", tweetController.createTweet); */
 
 tweetsRouter.post("/likeToggle", isLoggedIn, tweetController.likeToggle);
 tweetsRouter.get("/profile/:userName/deleteTweet:id", userDeleteTweet, tweetController.deleteTweet);
