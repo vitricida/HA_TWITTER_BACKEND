@@ -9,7 +9,7 @@ async function showTweet(req, res) {
 //tweet
 async function createTweet(req, res) {
   //console.log("ACA EL CONTENT del CreateTweet: ", req.body);
-  console.log(req.user);
+  //console.log(req.user);
   try {
     const newTweet = await Tweet.create({
       content: req.body.content,
@@ -27,27 +27,30 @@ async function createTweet(req, res) {
     //res.status(404).render("error", errores);
   }
 }
-
-async function likeToggle(req, res) {
+//like
+async function like(req, res) {
+  console.log(req.body);
   try {
-    const user = await User.findOne({ _id: req.body.user });
-    const tweet = await Tweet.findOne({ _id: req.body.tweet });
-    const found = tweet.likes.find((element) => String(element) === String(user._id));
+    const user = await User.findOne({ _id: req.body.tweet.owner._id });
+    const tweet = await Tweet.findOne({ _id: req.body.tweet._id });
+    const found = tweet.likes.find(
+      (element) => String(element) === String(req.body.tweet.owner._id),
+    );
     if (found) {
       await tweet.likes.pull(user);
       await tweet.save();
-      res.redirect("home");
+      res.json();
     } else {
       await tweet.likes.push(user);
       await tweet.save();
-      res.redirect("home");
+      res.json();
     }
   } catch (error) {
     console.log(error);
     const errores = {
       mensaje: error,
     };
-    res.status(404).send(errores);
+    res.status(404).json(errores);
     //res.status(404).render("error", errores);
   }
 }
@@ -62,6 +65,6 @@ async function deleteTweet(req, res) {
 module.exports = {
   showTweet,
   createTweet,
-  likeToggle,
+  like,
   deleteTweet,
 };
