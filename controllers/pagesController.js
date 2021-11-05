@@ -35,6 +35,7 @@ async function user(req, res) {
 }
 
 async function randomUsers(req, res) {
+  console.log("Random Users : ", req.user.userId);
   try {
     const users = await User.find({ _id: { $ne: req.user.userId } });
     const ids = [];

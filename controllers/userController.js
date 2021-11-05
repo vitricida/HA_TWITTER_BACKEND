@@ -58,6 +58,13 @@ async function searchUser(req, res) {
 async function followToggle(req, res) {
   console.log("Usuario logueado : " + req.user.userId);
   console.log("Usuario a seguir : " + req.body.userToFollow);
+  if (
+    req.user.userId === req.body.userToFollow ||
+    req.user.userId === "" ||
+    req.body.userToFollow === ""
+  ) {
+    res.status(400).json({ error: "error en la solicitud de following" });
+  }
   try {
     const user = await User.findOne({ _id: req.user.userId });
     const userToFollow = await User.findOne({ _id: req.body.userToFollow });
