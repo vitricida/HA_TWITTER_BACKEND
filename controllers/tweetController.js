@@ -29,20 +29,20 @@ async function createTweet(req, res) {
 }
 //like
 async function like(req, res) {
-  console.log(req.body);
+  //console.log(req.body);
   try {
-    const user = await User.findOne({ _id: req.body.tweet.owner._id });
-    const tweet = await Tweet.findOne({ _id: req.body.tweet._id });
-    const found = tweet.likes.find(
-      (element) => String(element) === String(req.body.tweet.owner._id),
-    );
+    const user = await User.findOne({ _id: req.body.owner._id });
+    const tweet = await Tweet.findOne({ _id: req.body._id });
+    const found = tweet.likes.find((element) => String(element) === String(req.body.owner._id));
     if (found) {
+      console.log("lo tengo que sacar");
       await tweet.likes.pull(user);
-      await tweet.save();
+      tweet.save();
       res.json();
     } else {
+      console.log("lo tengo que agregar");
       await tweet.likes.push(user);
-      await tweet.save();
+      tweet.save();
       res.json();
     }
   } catch (error) {
