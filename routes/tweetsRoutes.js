@@ -6,7 +6,10 @@ const userDeleteTweet = require("../middlewares/userDeleteTweet");
 
 const isLoggedIn = require("../middlewares/isLoggedIn");
 
-tweetsRouter.get("/tweet?:id", isLoggedIn, tweetController.showTweet);
+//tweet profile
+
+tweetsRouter.get("/tweet?:userName", tweetController.showTweet);
+
 //tweet route
 /* tweetsRouter.post("/tweet", tweetController.createTweet); */
 //like

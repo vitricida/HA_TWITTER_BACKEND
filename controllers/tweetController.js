@@ -2,8 +2,9 @@ const Tweet = require("../models/Tweet");
 const User = require("../models/User");
 
 async function showTweet(req, res) {
+  console.log("entró llamada!!!!");
   const tweet = req.query.id;
-  res.send("Voy a mostrar el tweet con ID : " + tweet + ".");
+  res.json("Voy a mostrar el tweet con ID : " + tweet + ".");
 }
 
 //tweet
