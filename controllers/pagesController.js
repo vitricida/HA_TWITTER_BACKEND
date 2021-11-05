@@ -5,26 +5,42 @@ async function showIndex(req, res) {
 }
 async function tweets(req, res) {
   try {
-    const thisUser = await User.findById(req.user.userId);
-    const homeTweets = await Tweet.find({ owner: { $in: [...thisUser.following, thisUser] } })
-      .limit(20)
-      .sort({ date: "desc" })
-      .populate("owner");
-    res.status(200).json(homeTweets);
+    if (req.query.userName) {
+      console.log("vengo de un profile!!!!");
+      const thisUserProf = await User.findOne({ userName: req.query.userName });
+      //console.log("El usuario es : ", thisUserProf);
+      const profileTweets = await Tweet.find({
+        owner: thisUserProf,
+      })
+        .sort({ date: "desc" })
+        .populate("owner");
+      console.log("Profile tweets : " + profileTweets);
+      res.status(200).json(profileTweets);
+    } else {
+      console.log("vengo del home!!!!");
+      const thisUserProf = await User.findById(req.user.userId);
+      console.log("El usuario es : ", thisUserProf);
+      const profileTweets = await Tweet.find({
+        owner: { $in: [...thisUserProf.following, thisUserProf] },
+      })
+        .sort({ date: "desc" })
+        .populate("owner");
+      res.status(200).json(profileTweets);
+    }
   } catch (error) {
-    console.log(error);
+    //console.log(error);
   }
 }
 async function user(req, res) {
   try {
     console.log(req.query.userName);
     if (req.query.userName) {
-      console.log("USUARIO POR BODY!!!!");
+      //console.log("USUARIO POR BODY!!!!");
       const thisUser = await User.findOne({ userName: req.query.userName });
       console.log(thisUser);
       res.status(200).json(thisUser);
     } else {
-      console.log("USUARIO POR JWT!!!!");
+      //console.log("USUARIO POR JWT!!!!");
       const thisUser = await User.findById(req.user.userId);
       console.log(thisUser);
       res.status(200).json(thisUser);
