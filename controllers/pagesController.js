@@ -18,9 +18,11 @@ async function tweets(req, res) {
 async function user(req, res) {
   try {
     if (req.body.userName) {
+      console.log("USUARIO POR BODY!!!!");
       const thisUser = await User.findOne({ userName: req.body.userName });
       res.status(200).json(thisUser);
     } else {
+      console.log("USUARIO POR JWT!!!!");
       const thisUser = await User.findById(req.user.userId);
       res.status(200).json(thisUser);
     }
