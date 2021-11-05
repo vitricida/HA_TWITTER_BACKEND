@@ -10,21 +10,25 @@ async function showTweet(req, res) {
 async function createTweet(req, res) {
   //console.log("ACA EL CONTENT del CreateTweet: ", req.body);
   //console.log(req.user);
-  try {
-    const newTweet = await Tweet.create({
-      content: req.body.content,
-      owner: req.user.userId,
-      likes: [],
-      date: new Date(),
-    });
-    res.status(200).json(newTweet);
-  } catch (error) {
-    console.log(error);
-    const errores = {
-      mensaje: error,
-    };
-    res.status(404).json(errores);
-    //res.status(404).render("error", errores);
+  if (req.body.content !== "") {
+    try {
+      const newTweet = await Tweet.create({
+        content: req.body.content,
+        owner: req.user.userId,
+        likes: [],
+        date: new Date(),
+      });
+      res.status(200).json(newTweet);
+    } catch (error) {
+      console.log(error);
+      const errores = {
+        mensaje: error,
+      };
+      res.status(404).json(errores);
+      //res.status(404).render("error", errores);
+    }
+  } else {
+    res.status(401).send("error : empty body");
   }
 }
 //like
