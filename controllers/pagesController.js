@@ -17,8 +17,13 @@ async function tweets(req, res) {
 }
 async function user(req, res) {
   try {
-    const thisUser = await User.findById(req.user.userId);
-    res.status(200).json(thisUser);
+    if (req.body.userName) {
+      const thisUser = await User.findOne({ userName: req.body.userName });
+      res.status(200).json(thisUser);
+    } else {
+      const thisUser = await User.findById(req.user.userId);
+      res.status(200).json(thisUser);
+    }
   } catch (error) {
     console.log(error);
   }
