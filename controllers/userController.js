@@ -56,18 +56,14 @@ async function searchUser(req, res) {
 }
 
 async function followToggle(req, res) {
-  console.log(req.method);
-  console.log(req.user.userId);
-  console.log(req.body.userToFollow);
-  /* try {
-    const user = await User.findOne({ _id: req.user.id });
+  console.log("Usuario logueado : " + req.user.userId);
+  console.log("Usuario a seguir : " + req.body.userToFollow);
+  try {
+    const user = await User.findOne({ _id: req.user.userId });
     const userToFollow = await User.findOne({ _id: req.body.userToFollow });
     const found = user.following.find(
       (element) => String(element) === String(req.body.userToFollow),
     );
-    console.log(user);
-    console.log(userToFollow);
-    console.log(found);
 
     if (found) {
       //el usuario si esta en el array, hay que sacarlo
@@ -76,7 +72,7 @@ async function followToggle(req, res) {
       await userToFollow.followedBy.pull(user);
       await user.save();
       await userToFollow.save();
-      res.redirect("home");
+      res.status(200).json("ok");
     } else {
       //el usuario no esta en el array, hay que agregarlo
       console.log("NO lo sigue, hay que agregarlo!!!!");
@@ -84,7 +80,7 @@ async function followToggle(req, res) {
       await userToFollow.followedBy.push(user);
       await user.save();
       await userToFollow.save();
-      res.redirect("home");
+      res.status(200).json("ok");
     }
   } catch (error) {
     console.log(error);
@@ -92,7 +88,7 @@ async function followToggle(req, res) {
       mensaje: error,
     };
     res.status(404).send(errores);
-  } */
+  }
 }
 
 module.exports = {
